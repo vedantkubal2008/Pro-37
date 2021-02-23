@@ -4,6 +4,7 @@ class Question {
         this.input1 = createInput("Enter your name here__");
         this.input2 = createInput("Write your answer number");
         this.button = createButton("SUBMIT");
+         this.reset_button = createButton("RESET");
       this.title = createElement('h2')
       this.question = createElement('h2');
       this.option1 = createElement('h2');
@@ -41,7 +42,7 @@ class Question {
       this.input1.position(400,400);
       this.input2.position(700,400);
       this.button.position(650, 500);
-
+      this.reset_button.position(1450,40);
       this.button.mousePressed(()=>{
         this.title.hide();
         this.input1.hide();
@@ -55,7 +56,10 @@ class Question {
         contestant.updateCount(contestantCount);
       
       });
-  
+       this.reset_button.mousePressed(()=>{
+      contestant.updateCount(0);
+      quiz.update(0);
+    });
     }
   }
   
